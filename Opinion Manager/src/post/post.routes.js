@@ -8,6 +8,6 @@ const api = Router()
 
 api.post('/save', [validateJwt], save)
 api.put('/update/:id', [validateJwt], update)
-api.delete('/delete', [validateJwt], deleteU)
+api.delete('/delete/:id', [validateJwt], deleteU)
 
 export default api

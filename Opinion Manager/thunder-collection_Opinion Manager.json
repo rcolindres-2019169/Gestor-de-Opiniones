@@ -1,0 +1,543 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Opinion Manager",
+    "dateExported": "2024-03-01T17:36:14.340Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "392f990c-41d1-470e-9eac-a4b48ce0289b",
+            "name": "user",
+            "containerId": "",
+            "created": "2024-03-01T13:50:36.734Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "a575e279-f2c4-4bf9-8102-1ef02b1c61f8",
+            "name": "category",
+            "containerId": "",
+            "created": "2024-03-01T13:50:42.454Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "bc799bf8-4446-47f2-afdb-f5d2884a9d54",
+            "name": "post",
+            "containerId": "",
+            "created": "2024-03-01T13:50:46.638Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "f04c94ae-f271-42f2-aaf5-d0eb170f7a3e",
+            "name": "comment",
+            "containerId": "",
+            "created": "2024-03-01T13:50:51.982Z",
+            "sortNum": 40000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "76adafd8-8d26-4c88-99d7-9e7a1b97146d",
+            "colId": "4b21b0da-e2ef-4468-b1ab-6bf28b31ceae",
+            "containerId": "392f990c-41d1-470e-9eac-a4b48ce0289b",
+            "name": "register",
+            "url": "user/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-01T14:55:12.856Z",
+            "modified": "2024-03-01T15:06:25.903Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Pedro"
+                    },
+                    {
+                        "name": "lastname",
+                        "value": "Velasquez"
+                    },
+                    {
+                        "name": "username",
+                        "value": "pvelasquez"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12345678"
+                    },
+                    {
+                        "name": "email",
+                        "value": "pvelasquez@gmail.com"
+                    },
+                    {
+                        "name": "phone",
+                        "value": "23457894"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "c357d9b3-e818-4f9c-9982-03c97b8fa00e",
+            "colId": "4b21b0da-e2ef-4468-b1ab-6bf28b31ceae",
+            "containerId": "392f990c-41d1-470e-9eac-a4b48ce0289b",
+            "name": "login",
+            "url": "user/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-01T14:55:16.639Z",
+            "modified": "2024-03-01T17:13:35.125Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "pvelasquez"
+                    },
+                    {
+                        "name": "password",
+                        "value": "1324"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "ca808467-8e0d-40d5-b140-e1c3ea3425a0",
+            "colId": "4b21b0da-e2ef-4468-b1ab-6bf28b31ceae",
+            "containerId": "392f990c-41d1-470e-9eac-a4b48ce0289b",
+            "name": "update",
+            "url": "user/update/65e1eef1aff4661805b20537",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-01T14:56:02.571Z",
+            "modified": "2024-03-01T15:09:33.630Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZWViZWFmZjQ2NjE4MDViMjA1MzQiLCJ1c2VybmFtZSI6InJjb2wiLCJuYW1lIjoiUmljYXJkbyIsImVtYWlsIjoicmNvbEBnbWFpbC5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5MzA1Njk0LCJleHAiOjE3MDkzMTY0OTR9.LCng5InwU0K_10WOy40ET-sB7Eto4f82lhJGtE6Iowg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "phone",
+                        "value": "11111111"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "f634896e-382c-4501-8cd5-40af0dd1eec4",
+            "colId": "4b21b0da-e2ef-4468-b1ab-6bf28b31ceae",
+            "containerId": "392f990c-41d1-470e-9eac-a4b48ce0289b",
+            "name": "newPassword",
+            "url": "user/updatePassword/65e1eebeaff4661805b20534",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-03-01T14:58:33.702Z",
+            "modified": "2024-03-01T16:05:43.258Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZWViZWFmZjQ2NjE4MDViMjA1MzQiLCJ1c2VybmFtZSI6InJjb2wiLCJuYW1lIjoiUmljYXJkbyIsImVtYWlsIjoicmNvbEBnbWFpbC5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5MzA1Njk0LCJleHAiOjE3MDkzMTY0OTR9.LCng5InwU0K_10WOy40ET-sB7Eto4f82lhJGtE6Iowg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "oldPassword",
+                        "value": "12345678"
+                    },
+                    {
+                        "name": "newPassword",
+                        "value": "12345678"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "142a91c1-4e85-4623-b896-4e0a4aeba3b5",
+            "colId": "4b21b0da-e2ef-4468-b1ab-6bf28b31ceae",
+            "containerId": "392f990c-41d1-470e-9eac-a4b48ce0289b",
+            "name": "get",
+            "url": "user/get",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-01T14:58:37.346Z",
+            "modified": "2024-03-01T15:15:26.446Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZWViZWFmZjQ2NjE4MDViMjA1MzQiLCJ1c2VybmFtZSI6InJjb2wiLCJuYW1lIjoiUmljYXJkbyIsImVtYWlsIjoicmNvbEBnbWFpbC5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5MzA1Njk0LCJleHAiOjE3MDkzMTY0OTR9.LCng5InwU0K_10WOy40ET-sB7Eto4f82lhJGtE6Iowg"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "94c06302-05b2-4926-b2a3-da06ba17fd22",
+            "colId": "4b21b0da-e2ef-4468-b1ab-6bf28b31ceae",
+            "containerId": "392f990c-41d1-470e-9eac-a4b48ce0289b",
+            "name": "search",
+            "url": "user/search",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-03-01T14:58:44.963Z",
+            "modified": "2024-03-01T15:16:34.978Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZWViZWFmZjQ2NjE4MDViMjA1MzQiLCJ1c2VybmFtZSI6InJjb2wiLCJuYW1lIjoiUmljYXJkbyIsImVtYWlsIjoicmNvbEBnbWFpbC5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5MzA1Njk0LCJleHAiOjE3MDkzMTY0OTR9.LCng5InwU0K_10WOy40ET-sB7Eto4f82lhJGtE6Iowg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "search",
+                        "value": "Rica"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "83c0e0b0-2927-4a7f-b458-a71d62a6835d",
+            "colId": "4b21b0da-e2ef-4468-b1ab-6bf28b31ceae",
+            "containerId": "a575e279-f2c4-4bf9-8102-1ef02b1c61f8",
+            "name": "save",
+            "url": "category/save",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-03-01T15:00:26.179Z",
+            "modified": "2024-03-01T16:32:03.911Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZWViZWFmZjQ2NjE4MDViMjA1MzQiLCJ1c2VybmFtZSI6InJjb2wiLCJuYW1lIjoiUmljYXJkbyIsImVtYWlsIjoicmNvbEBnbWFpbC5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5MzA1Njk0LCJleHAiOjE3MDkzMTY0OTR9.LCng5InwU0K_10WOy40ET-sB7Eto4f82lhJGtE6Iowg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Videogames"
+                    },
+                    {
+                        "name": "description",
+                        "value": "fun games"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "8ddbe0d5-ca62-4c43-a2fc-609827992146",
+            "colId": "4b21b0da-e2ef-4468-b1ab-6bf28b31ceae",
+            "containerId": "a575e279-f2c4-4bf9-8102-1ef02b1c61f8",
+            "name": "update",
+            "url": "category/update/65e1fd62ccfdb1add6c273bf",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2024-03-01T15:00:31.075Z",
+            "modified": "2024-03-01T16:11:09.783Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZWViZWFmZjQ2NjE4MDViMjA1MzQiLCJ1c2VybmFtZSI6InJjb2wiLCJuYW1lIjoiUmljYXJkbyIsImVtYWlsIjoicmNvbEBnbWFpbC5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5MzA1Njk0LCJleHAiOjE3MDkzMTY0OTR9.LCng5InwU0K_10WOy40ET-sB7Eto4f82lhJGtE6Iowg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Videogames"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "c1cca8b2-404f-4454-b6ea-f3a707391561",
+            "colId": "4b21b0da-e2ef-4468-b1ab-6bf28b31ceae",
+            "containerId": "a575e279-f2c4-4bf9-8102-1ef02b1c61f8",
+            "name": "delete",
+            "url": "category/delete/65e1fd62ccfdb1add6c273bf",
+            "method": "DELETE",
+            "sortNum": 90000,
+            "created": "2024-03-01T15:00:34.273Z",
+            "modified": "2024-03-01T16:12:17.000Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZWViZWFmZjQ2NjE4MDViMjA1MzQiLCJ1c2VybmFtZSI6InJjb2wiLCJuYW1lIjoiUmljYXJkbyIsImVtYWlsIjoicmNvbEBnbWFpbC5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5MzA1Njk0LCJleHAiOjE3MDkzMTY0OTR9.LCng5InwU0K_10WOy40ET-sB7Eto4f82lhJGtE6Iowg"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "39028332-c99d-45bd-a177-663f7cd75e51",
+            "colId": "4b21b0da-e2ef-4468-b1ab-6bf28b31ceae",
+            "containerId": "a575e279-f2c4-4bf9-8102-1ef02b1c61f8",
+            "name": "get",
+            "url": "category/get",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2024-03-01T15:00:38.995Z",
+            "modified": "2024-03-01T16:08:48.150Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZWViZWFmZjQ2NjE4MDViMjA1MzQiLCJ1c2VybmFtZSI6InJjb2wiLCJuYW1lIjoiUmljYXJkbyIsImVtYWlsIjoicmNvbEBnbWFpbC5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5MzA1Njk0LCJleHAiOjE3MDkzMTY0OTR9.LCng5InwU0K_10WOy40ET-sB7Eto4f82lhJGtE6Iowg"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ae7339b2-661d-4250-9094-c8a3c6be4f25",
+            "colId": "4b21b0da-e2ef-4468-b1ab-6bf28b31ceae",
+            "containerId": "a575e279-f2c4-4bf9-8102-1ef02b1c61f8",
+            "name": "search",
+            "url": "category/search",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2024-03-01T15:00:43.233Z",
+            "modified": "2024-03-01T16:10:04.469Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZWViZWFmZjQ2NjE4MDViMjA1MzQiLCJ1c2VybmFtZSI6InJjb2wiLCJuYW1lIjoiUmljYXJkbyIsImVtYWlsIjoicmNvbEBnbWFpbC5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5MzA1Njk0LCJleHAiOjE3MDkzMTY0OTR9.LCng5InwU0K_10WOy40ET-sB7Eto4f82lhJGtE6Iowg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "p"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "0c871eab-c85f-4b87-b9c1-9e027e4159ad",
+            "colId": "4b21b0da-e2ef-4468-b1ab-6bf28b31ceae",
+            "containerId": "bc799bf8-4446-47f2-afdb-f5d2884a9d54",
+            "name": "save",
+            "url": "post/save",
+            "method": "POST",
+            "sortNum": 120000,
+            "created": "2024-03-01T15:00:54.699Z",
+            "modified": "2024-03-01T16:44:16.175Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZWViZWFmZjQ2NjE4MDViMjA1MzQiLCJ1c2VybmFtZSI6InJjb2wiLCJuYW1lIjoiUmljYXJkbyIsImVtYWlsIjoicmNvbEBnbWFpbC5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5MzA1Njk0LCJleHAiOjE3MDkzMTY0OTR9.LCng5InwU0K_10WOy40ET-sB7Eto4f82lhJGtE6Iowg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "tittle",
+                        "value": "Pizza"
+                    },
+                    {
+                        "name": "category",
+                        "value": "65e1fe56ccfdb1add6c273c9"
+                    },
+                    {
+                        "name": "content",
+                        "value": "La hamburguesa de McDonalds es muy pequeña "
+                    },
+                    {
+                        "name": "user",
+                        "value": "65e1eebeaff4661805b20534"
+                    },
+                    {
+                        "name": "date",
+                        "value": "",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "comments",
+                        "value": "",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "023eae6e-74db-4729-9f56-a91dfa158664",
+            "colId": "4b21b0da-e2ef-4468-b1ab-6bf28b31ceae",
+            "containerId": "bc799bf8-4446-47f2-afdb-f5d2884a9d54",
+            "name": "update",
+            "url": "post/update/65e202d9007804325476b35e",
+            "method": "PUT",
+            "sortNum": 140000,
+            "created": "2024-03-01T15:01:02.889Z",
+            "modified": "2024-03-01T16:36:57.607Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZWViZWFmZjQ2NjE4MDViMjA1MzQiLCJ1c2VybmFtZSI6InJjb2wiLCJuYW1lIjoiUmljYXJkbyIsImVtYWlsIjoicmNvbEBnbWFpbC5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5MzEwODY2LCJleHAiOjE3MDkzMjE2NjZ9.mFM2IjLKcKS4JnQz6yizSjUH9RzgA782YgnrlpS3wek"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "content",
+                        "value": "la pizza es la peor comida del mundo"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "6521802c-8af8-40c0-a753-518ad68d872d",
+            "colId": "4b21b0da-e2ef-4468-b1ab-6bf28b31ceae",
+            "containerId": "bc799bf8-4446-47f2-afdb-f5d2884a9d54",
+            "name": "delete",
+            "url": "post/delete/65e205e0d8497a9c64ca894a",
+            "method": "DELETE",
+            "sortNum": 150000,
+            "created": "2024-03-01T15:01:08.491Z",
+            "modified": "2024-03-01T16:44:31.491Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZWViZWFmZjQ2NjE4MDViMjA1MzQiLCJ1c2VybmFtZSI6InJjb2wiLCJuYW1lIjoiUmljYXJkbyIsImVtYWlsIjoicmNvbEBnbWFpbC5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5MzEwODY2LCJleHAiOjE3MDkzMjE2NjZ9.mFM2IjLKcKS4JnQz6yizSjUH9RzgA782YgnrlpS3wek"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "bcebd1b6-f892-4406-9c88-236cd220a17f",
+            "colId": "4b21b0da-e2ef-4468-b1ab-6bf28b31ceae",
+            "containerId": "f04c94ae-f271-42f2-aaf5-d0eb170f7a3e",
+            "name": "save",
+            "url": "comment/save",
+            "method": "POST",
+            "sortNum": 160000,
+            "created": "2024-03-01T15:01:22.126Z",
+            "modified": "2024-03-01T17:28:34.806Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZGNkOWM1YWRiNGNmNmNkZTljZjAiLCJ1c2VybmFtZSI6ImRlZmF1bHQiLCJuYW1lIjoiRGVmYXVsdCIsImVtYWlsIjoiZGVmYXVsdEBkZWZhdWx0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTcwOTMxMjE0NiwiZXhwIjoxNzA5MzIyOTQ2fQ.ahFWT949wIgr8ELemiit3JbtmTpReumKJNLUYfdcH7o"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "content",
+                        "value": "De acuerdo"
+                    },
+                    {
+                        "name": "user",
+                        "value": "65e1eebeaff4661805b20534"
+                    },
+                    {
+                        "name": "post",
+                        "value": "65e204659333f135992e11ea"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "390119b8-6080-4513-ad8c-073b3b8f15da",
+            "colId": "4b21b0da-e2ef-4468-b1ab-6bf28b31ceae",
+            "containerId": "f04c94ae-f271-42f2-aaf5-d0eb170f7a3e",
+            "name": "update",
+            "url": "comment/update/65e208ae4e619c92b1322a61",
+            "method": "PUT",
+            "sortNum": 170000,
+            "created": "2024-03-01T15:01:26.675Z",
+            "modified": "2024-03-01T17:24:17.158Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZWVmMWFmZjQ2NjE4MDViMjA1MzciLCJ1c2VybmFtZSI6InB2ZWxhc3F1ZXoiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InB2ZWxhc3F1ZXpAZ21haWwuY29tIiwicm9sZSI6IkNMSUVOVCIsImlhdCI6MTcwOTMxMzIxNSwiZXhwIjoxNzA5MzI0MDE1fQ.CponQvMYXXCuy2fx78apjER-mapGFrJqnOO_dtohEZ4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "content",
+                        "value": "No estoy de acuerdo"
+                    },
+                    {
+                        "name": "comment",
+                        "value": "65e208ae4e619c92b1322a61",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "7dfaa030-6b18-48dd-81cb-5e1d5e7eab9c",
+            "colId": "4b21b0da-e2ef-4468-b1ab-6bf28b31ceae",
+            "containerId": "f04c94ae-f271-42f2-aaf5-d0eb170f7a3e",
+            "name": "delete",
+            "url": "comment/delete/65e2102674143145ccfaceae",
+            "method": "DELETE",
+            "sortNum": 180000,
+            "created": "2024-03-01T15:01:30.979Z",
+            "modified": "2024-03-01T17:35:33.084Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZWVmMWFmZjQ2NjE4MDViMjA1MzciLCJ1c2VybmFtZSI6InB2ZWxhc3F1ZXoiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InB2ZWxhc3F1ZXpAZ21haWwuY29tIiwicm9sZSI6IkNMSUVOVCIsImlhdCI6MTcwOTMxNDUyMSwiZXhwIjoxNzA5MzI1MzIxfQ.c7HPrEOLOCONRjJoY50b7PhOfPouoHIFWhUIIv2-1Gg"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "localhost:2656/"
+        }
+    }
+}

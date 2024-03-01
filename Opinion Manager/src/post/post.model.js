@@ -26,7 +26,6 @@ const postSchema = Schema({
 comments: {
     type: Schema.Types.ObjectId, 
     ref: 'comment' },
-    default: []
 }
 );
 

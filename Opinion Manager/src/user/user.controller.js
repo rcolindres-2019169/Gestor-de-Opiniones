@@ -38,12 +38,12 @@ export const test = (req, res)=>{
 export const register = async(req, res)=>{
     try{
         let data = req.body
-        const existingUser = await Category.findOne({ name: data.username });
+        const existingUser = await User.findOne({ name: data.username });
         if (existingUser) {
             return res.status(400).send({ message: 'Username with the same name already exists' });
         }
         data.password = await encrypt(data.password)
-        data.role = 'ADMIN'
+        data.role = 'CLIENT'
         let user = new User(data)
         await user.save() 
         return res.send({message: `Registered successfully, can be logged with username ${user.username} o email ${user.email}`})
@@ -85,7 +85,7 @@ export const update = async(req, res)=>{
     try{
         let { id } = req.params
         let data = req.body
-        const existingUser = await Category.findOne({ name: data.username });
+        const existingUser = await User.findOne({ name: data.username });
         if (existingUser) {
             return res.status(400).send({ message: 'Username with the same name already exists' });
         }
@@ -105,17 +105,7 @@ export const update = async(req, res)=>{
     }
 }
 
-export const deleteU = async(req, res)=>{
-    try{
-        let { id } = req.params
-        let deletedUser = await User.findOneAndDelete({_id: id}) 
-        if(!deletedUser) return res.status(404).send({message: 'Account not found and not deleted'})
-        return res.send({message: `Account with username ${deletedUser.username} deleted successfully`}) 
-    }catch(err){
-        console.error(err)
-        return res.status(500).send({message: 'Error deleting account'})
-    }
-}
+
 
 export const get = async (req,res ) =>{
     try{
@@ -135,7 +125,7 @@ export const search = async(req,res)=>{
             {name: search}
         )
         if (users.length === 0) {
-            return res.status(404).send({ message: 'Categories not found' });
+            return res.status(404).send({ message: 'Users not found' });
         }
         if(!users) return res.status(404).send({message: 'Users not found'})
             return res.send({message: 'Users found', users})
