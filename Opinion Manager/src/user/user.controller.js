@@ -38,6 +38,10 @@ export const test = (req, res)=>{
 export const register = async(req, res)=>{
     try{
         let data = req.body
+        const existingUser = await Category.findOne({ name: data.username });
+        if (existingUser) {
+            return res.status(400).send({ message: 'Username with the same name already exists' });
+        }
         data.password = await encrypt(data.password)
         data.role = 'ADMIN'
         let user = new User(data)
@@ -81,6 +85,10 @@ export const update = async(req, res)=>{
     try{
         let { id } = req.params
         let data = req.body
+        const existingUser = await Category.findOne({ name: data.username });
+        if (existingUser) {
+            return res.status(400).send({ message: 'Username with the same name already exists' });
+        }
         let update = checkUpdate(data, id)
         if(!update) return res.status(400).send({message: 'Have submitted some data that cannot be updated or missing data'})
         let updatedUser = await User.findOneAndUpdate(
@@ -134,5 +142,32 @@ export const search = async(req,res)=>{
     }catch(err){
         console.error(err)
         return res.status(500).send({message: 'Error searching users'})
+    }
+}
+
+
+export const newPassword = async (req,res)=>{
+    try{
+        let {oldPassword, newPassword} = req.body
+        let {id} = req.params
+        let uid = req.user._id
+        if(id != uid) return res.status(401).send({message: 'You can only update your password in your account'})
+        let user  = await User.findOne({_id: id })
+        if(!user) return res.status(401).send({message: 'User not found (not exist, incorrect)'})
+        
+        let passOldPassword = await checkPassword(oldPassword, user.password)
+        if(!passOldPassword) return res.status(400).send({message: 'The old password is incorrect'})
+        if(oldPassword === newPassword) return res.status(500).send({message: 'Enter a new password for update'})
+
+        let updatedUser = await User.findOneAndUpdate(
+            {_id : id},
+            {password : await encrypt(newPassword)},
+            {new: true}
+        )
+        if(!updatedUser) return res.status(404).send({message: 'User not found or password'})
+        return res.send({message: 'Password updated successfullu', updatedUser})
+    }catch(err){
+        console.error(err)
+        return res.status(500).send({message: 'Error updating the password ', err:err })
     }
 }

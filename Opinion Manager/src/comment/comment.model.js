@@ -5,7 +5,7 @@ const commentSchema = Schema({
     type: String, 
     required: true 
 },
-  author: { 
+  user: { 
     type: Schema.Types.ObjectId, 
     ref: 'user', 
     required: true 
@@ -14,6 +14,11 @@ const commentSchema = Schema({
     type: Date, 
     default: Date.now
  },
+  post: {
+    type: Schema.Types.ObjectId,
+    ref: 'post',
+    required: true
+  },
 });
 
 export default model ('comment', commentSchema)

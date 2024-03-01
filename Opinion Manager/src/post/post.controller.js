@@ -1,11 +1,17 @@
 'use strict'
 
 import Post from './post.model.js'
-import { checkUpdate } from '../utils/validator.js'
+import User from '../user/user.model.js'
+import Category from '../category/category.model.js'
+import {  checkUpdatePost } from '../utils/validator.js'
 
 export const save =  async (req,res)=>{
     try{
         let data = req.body
+        let user = await User.findOne({_id: data.user })
+        if(!user) return res.status(404).send({message: 'User not found'})
+        let category = await Category.findOne({_id: data.category})
+        if(!category) return res.status(404).send({message: 'Category not found'})
         let post = new Post(data)
         await post.save()
         return res.send({message: `Public post succesfully`})
@@ -19,7 +25,11 @@ export const update = async (req,res) =>{
     try{
         let { id } = req.params
         let data = req.body
-        let update = checkUpdate(data, id)
+        let user = await User.findOne({_id: data.user })
+        if(!user) return res.status(404).send({message: 'User not found'})
+        let category = await Category.findOne({_id: data.category})
+        if(!category) return res.status(404).send({message: 'Category not found'})
+        let update = checkUpdatePost(data, id)
         if(!update) return res.status(400).send({message: 'Have submitted some data that cannot be updated or missing data'})
         let updatedPost = await Post.findOneAndUpdate(
             {_id: id},

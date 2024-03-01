@@ -1,7 +1,7 @@
 'use strict'
 
 import Category from './category.model.js'
-import { checkUpdate } from '../utils/validator.js'
+import { checkUpdatePost } from '../utils/validator.js'
 
 export const save = async(req, res)=>{  
     try{
@@ -25,7 +25,7 @@ export const update = async (req,res) =>{
     try{
         let { id } = req.params
         let data = req.body
-        let update = checkUpdate(data, id)
+        let update = checkUpdatePost(data, id)
         if(!update) return res.status(400).send({message: 'Have submitted some data that cannot be updated or missing data'})
         let updatedCategory = await Category.findOneAndUpdate(
             {_id: id},

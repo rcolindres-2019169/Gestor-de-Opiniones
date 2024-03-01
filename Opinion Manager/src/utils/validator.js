@@ -45,3 +45,22 @@ export const checkUpdate = (data, userId)=>{
         return true
     }
 }
+
+export const checkUpdatePost = (data, id)=>{
+    if(id){
+        if(
+            Object.entries(data).length === 0 ||
+            data.tittle == '' ||
+            data.category == '' ||
+            data.content == '' ||
+            data.author == '' ||
+            data.date == '' ||
+            data.name == '' ||
+            data.description == '' ||
+            data.comments == '' 
+        ) {
+            return false
+        }
+        return true
+    }
+}

@@ -1,11 +1,17 @@
 'use stict'
 
-import Post from './post.model.js'
-import { checkUpdate } from '../utils/validator.js'
+import Post from '../post/post.model.js'
+import User from '../user/user.model.js'
+import Comment from './comment.model.js'
+import { checkUpdatePost } from '../utils/validator.js'
 
 export const save =  async (req,res)=>{
     try{
         let data = req.body
+        let user = await User.findOne({_id: data.user })
+        if(!user) return res.status(404).send({message: 'User not found'})
+        let post = await Post.findOne({_id: data.post})
+        if(!post) return res.status(404).send({message: 'Post not found'})
         let comment = new Comment(data)
         await comment.save()
         return res.send({message: `Public comment succesfully`})
@@ -19,7 +25,11 @@ export const update = async (req,res) =>{
     try{
         let { id } = req.params
         let data = req.body
-        let update = checkUpdate(data, id)
+        let user = await User.findOne({_id: data.user })
+        if(!user) return res.status(404).send({message: 'User not found'})
+        let post = await Post.findOne({_id: data.post})
+        if(!post) return res.status(404).send({message: 'Post not found'})
+        let update = checkUpdatePost(data, id)
         if(!update) return res.status(400).send({message: 'Have submitted some data that cannot be updated or missing data'})
         let updatedComment = await Post.findOneAndUpdate(
             {_id: id},
@@ -38,7 +48,7 @@ export const update = async (req,res) =>{
 export const deleteU = async (req,res)=>{
     try{ 
         let { id } = req.params
-        let deletedComment = await Category.findOneAndDelete({_id: id})
+        let deletedComment = await Comment.findOneAndDelete({_id: id})
         if(!deletedComment) return res.status(404).send({message: 'Comment not found and not deleted'})
         return res.send({message: `Comment with tittle ${deletedComment.tittle} deleted successfully`})
     }catch(err){
